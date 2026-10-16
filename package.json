@@ -1,0 +1,9 @@
+{
+  "name": "sistema-votaciones-polls",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistema de votaciones rápidas con Vanilla JS, Vercel Functions y PostgreSQL",
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
+}

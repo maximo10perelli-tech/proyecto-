@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickPolls | Sistema de Votaciones Rápidas</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <span class="logo-icon">📊</span>
+        <h1>QuickPolls</h1>
+      </div>
+      <p class="tagline">Crea encuestas al instante y descubre qué opina la comunidad en tiempo real.</p>
+    </header>
+
+    <main class="main-content">
+      <!-- Formulario para Crear Encuesta -->
+      <section class="card creation-card">
+        <h2>Crear Nueva Encuesta</h2>
+        <form id="poll-form">
+          <div class="form-group">
+            <label for="question-input">Pregunta</label>
+            <input 
+              type="text" 
+              id="question-input" 
+              placeholder="Ej: ¿Qué tecnología prefieres para backend?" 
+              required
+              maxlength="255"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Opciones (mínimo 2)</label>
+            <div id="options-container" class="options-inputs">
+              <div class="option-row">
+                <input type="text" class="option-input" placeholder="Opción 1" required />
+              </div>
+              <div class="option-row">
+                <input type="text" class="option-input" placeholder="Opción 2" required />
+              </div>
+            </div>
+            <button type="button" id="add-option-btn" class="btn btn-secondary btn-sm">
+              + Agregar Opción
+            </button>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+            Publicar Encuesta
+          </button>
+        </form>
+      </section>
+
+      <!-- Lista de Encuestas -->
+      <section class="polls-section">
+        <div class="section-header">
+          <h2>Encuestas Activas</h2>
+          <button id="refresh-btn" class="btn btn-ghost btn-sm">🔄 Actualizar</button>
+        </div>
+
+        <div id="polls-list" class="polls-grid">
+          <!-- Renderizado dinámico con JS -->
+          <div class="loading-state">Cargando encuestas...</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
